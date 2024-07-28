@@ -6,9 +6,22 @@ namespace Framework;
 
 class App {
 
+    private Router $router;
+
+    public function __construct()
+    {
+        $this->router = new Router();
+    }
+
     public function run() {
 
         echo "App is running fast";
+
+    }
+
+    public function get(string $path) {
+
+        $this->router->add('GET', $path);
 
     }
 
