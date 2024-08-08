@@ -8,6 +8,7 @@ class Router
 {
 
     private array $routes = [];
+    private array $middlewares = [];
 
     public function add(string $method, string $path, array $controller)
     {
@@ -58,5 +59,10 @@ class Router
 
             $controllerInstance->{$function}();
         }
+    }
+
+    public function addMiddleware(string $middleware)
+    {
+        $this->middlewares[] = $middleware;
     }
 }
