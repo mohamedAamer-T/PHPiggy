@@ -12,6 +12,6 @@ use function App\Config\{registerRoutes, registerMiddleware};
 $app = new App(Paths::SOURCE . "App/container-definitions.php");
 
 registerRoutes($app);
-registerRoutes($app);
+registerMiddleware($app);
 
 return $app;
